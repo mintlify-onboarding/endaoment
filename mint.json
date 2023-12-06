@@ -1,0 +1,56 @@
+{
+    "name": "Endaoment",
+    "logo": {
+      "light": "/logo/light.png",
+      "dark": "/logo/dark.png"
+    },
+    "favicon": "/favicon.png",
+    "colors": {
+      "primary": "#",
+      "light": "#",
+      "dark": "#"
+    },
+    "topbarCtaButton": {
+      "name": "Launch App",
+      "url": "https://app.endaoment.org/?_gl=1*1ulxtj3*_gcl_au*NjkzMjE4MzgzLjE3MDE3Mzk3MzQ."
+    },
+    "anchors": [
+      {
+        "name": "Developers",
+        "icon": "code",
+        "url": "https://developers.endaoment.org/?_gl=1*1ulxtj3*_gcl_au*NjkzMjE4MzgzLjE3MDE3Mzk3MzQ."
+      },
+      {
+        "name": "GitHub",
+        "icon": "github",
+        "url": "https://github.com/endaoment/endaoment-sdk"
+      },
+      {
+        "name": "Contact",
+        "icon": "mailbox",
+        "url": "mailto:partnerships@endaoment.org"
+      }
+    ],
+    "navigation": [
+        {
+            "group": "Getting Started",
+            "pages": [
+              "introduction"
+            ]
+          },
+          {
+            "group": "For Donors",
+            "pages": [
+              "donors/donor-advised-funds",
+              "donors/about-accepted-assets",
+              "donors/impact-funds",
+              "donors/community-funds"
+            ]
+          }
+    ],
+    "footerSocials":
+      {
+          "twitter": "",
+          "linkedin": ""
+      }
+  }

@@ -1,0 +1,140 @@
+---
+title: "API Documentation"
+---
+
+[![Endaoment developers](/images/developers)](https://developers.endaoment.org/)
+
+## Endaoment API
+
+The Endaoment API offers a series of endpoints for developers to interface with permissionless Endaoment entities. The endpoints offer queries that range from data about specific Orgs to searching from all existing entities, while also facilitating and constructing transactions to enable deployment and charitable giving.
+
+For full documentation regarding Endaoment's API, [click here](https://api.endaoment.org/OAS)
+
+### Available End-Points
+
+#### Get Deployed Orgs
+
+Get a list of deployed Orgs. Will only return organizations that already have a deployed contract on Endaoment.
+
+Path: `/v1/sdk/orgs`
+
+Return Schema:
+
+```
+[
+  {
+    "id": "string",
+    "name": "string",
+    "ein": "string",
+    "contractAddress": "string",
+    "logoUrl": "string",
+    "nteeCode": "string",
+    "nteeDescription": "string",
+    "description": "string",
+    "endaomentUrl": "string"
+  }
+]
+```
+
+#### Search Orgs
+
+Search from an ever-growing list of organizations. Search by multiple search parameters, including an overall search term or NTEE codes.
+
+Path: `/v1/sdk/orgs/search`
+
+Return Schema:
+
+```
+[
+  {
+    "id": "string",
+    "name": "string",
+    "ein": "string",
+    "contractAddress": "string",
+    "logoUrl": "string",
+    "nteeCode": "string",
+    "nteeDescription": "string",
+    "description": "string",
+    "endaomentUrl": "string"
+  }
+]
+```
+
+#### Build an Org Deployment Transaction
+
+Given an EIN, construct a transaction that can deploy that organization
+
+Path: `/v1/sdk/orgs/deploy`
+
+Return Schema:
+
+```
+{
+  "to": "string",
+  "data": "string",
+  "value": "string"
+}
+```
+
+#### Get Funds
+
+Get a list of Endaoment Funds.
+
+Path: `/v1/sdk/funds`
+
+Return Schema:
+
+```
+[
+  {
+    "id": "string",
+    "name": "string",
+    "contractAddress": "string",
+    "logoUrl": "string",
+    "description": "string",
+    "endaomentUrl": "string"
+  }
+]
+```
+
+#### Search Funds
+
+Search from the list of Endaoment Funds. Only non-private, visible funds will be returned.
+
+Path: `/v1/sdk/funds/search`
+
+Return Schema:
+
+```
+[
+  {
+    "id": "string",
+    "name": "string",
+    "contractAddress": "string",
+    "logoUrl": "string",
+    "description": "string",
+    "endaomentUrl": "string"
+  }
+]
+```
+
+#### Build a Swap & Donate Transaction
+
+Given an EIN, a token contract address and the amount to donate, construct a transaction that can swap and donate the informed amount of tokens.
+
+Path: `/v1/sdk/donations/swap`
+
+Return Schema:
+
+```
+{
+  "to": "string",
+  "data": "string",
+  "value": "string",
+  "quote": {
+    "priceImpact": 0,
+    "expectedUsdc": "string",
+    "minimumTolerableUsdc": "string"
+  }
+}
+```
